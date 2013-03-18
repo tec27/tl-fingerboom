@@ -1,6 +1,8 @@
-/*jshint asi:true laxcomma:true browser:true evil:true */
+/*jshint asi:true, laxcomma:true, browser:true, evil:true */
 var $ = require('./jquery.js')
   , angular = require('./angular.js')
+  , parsers = { common: require('./parsers/common.js')
+              }
 
 module.exports = function fingerboom() {
   $(function() {
@@ -21,5 +23,8 @@ module.exports = function fingerboom() {
 
 function FingerBoom(oldBodyElems) {
   this.oldBodyElems = oldBodyElems
+
+  this.commonData = parsers.common(this.oldBodyElems)
+  console.dir(this.commonData)
 }
 
