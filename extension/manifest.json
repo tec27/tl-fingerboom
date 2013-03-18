@@ -1,0 +1,18 @@
+{ "manifest_version": 2
+
+, "name": "TL Fingerboom"
+, "description": "A modern take on TeamLiquid. Boom."
+, "version": "0.1"
+, "content_scripts":  [ { "matches":  [ "http://*.teamliquid.net/*"
+                                      , "https://*.teamliquid.net/*"
+                                      ]
+                        , "js": [ "injector.js"
+                                ]
+                        , "run_at": "document_start"
+                        }
+                      ]
+, "web_accessible_resources": [ "fingerboom.js"
+                              , "fingerboom.css"
+                              , "angular.min.js"
+                              ]
+}
